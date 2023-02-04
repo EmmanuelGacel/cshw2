@@ -2,33 +2,31 @@
 #include <stdio.h>
 #include "recursive.h"
 
+int gcd_helper(int m, int n){
 
-int answer;
+        if( m > n ){
+                if( n  == 0 ){
+                        return m;
+                }
+                return gcd_helper(n, m % n);
+        }
+        else if (n > m){
+                if( m == 0){
+                        return n;
+                }
+                return gcd_helper(m, n % m);
+        }
+        else{
+                return m; //could also be n, values of are the same
+        }
+
+}
 
 int gcd_recursive(int m, int n) {
 
-	if( m > n ){
-		if( n  == 0 ){
-			answer = m;
-			return m;
-		}
-		int temp = m % n;
-		return gcd_recursive(n, temp);
-	}
-	else if (n > m){
-		if( m == 0){
-			answer = n;
-			return n;
-		}
-		int temp = n % m;
-		return gcd_recursive(m, temp);
-	}
-	else{
-		answer = m;
-		return m; //could also be n, values of are the same
-	}
+	printf("Recursive: gcd(%d, %d) = %d\n", m, n, gcd_helper(m, n));
+	return 0;
+
 }
 
-printf("Recursive: gcd( %d, %d) = %d\n", one, two, answer);
-return EXIT_SUCESS;
 
