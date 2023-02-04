@@ -10,8 +10,8 @@ int main(int argc, char **argv) {
 		return EXIT_FAILURE;
 	}
 	else{
-		int one = abs(atoi(argv[1])); //takes and casts absolute value of second argument
-		int two = abs(atoi(argv[2])); //takes and casts  absolute value of first arugment
+		int one = atoi(argv[1]); //casts argument to int
+		int two = atoi(argv[2]);
 		if(one == 0 && two == 0){
 			printf("gcd(0, 0) = undefined\n");
 		}

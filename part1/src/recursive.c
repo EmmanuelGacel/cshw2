@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "recursive.h"
 
 int gcd_helper(int m, int n){
@@ -24,7 +25,7 @@ int gcd_helper(int m, int n){
 
 int gcd_recursive(int m, int n) {
 
-	printf("Recursive: gcd(%d, %d) = %d\n", m, n, gcd_helper(m, n));
+	printf("Recursive: gcd(%d, %d) = %d\n", m, n, gcd_helper(abs(m),abs(n))); //passes abs to helper
 	return 0;
 
 }
