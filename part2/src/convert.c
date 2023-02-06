@@ -5,10 +5,10 @@ int main() {
 	int x;
         printf("Enter an integer :\n");
         scanf("%d", &x);
-	printf("signed decimal : ", \n)" var returned x;
+	printf("signed decimal :%d\n", x); 
 	unsigned int y;
-	printf("unsigned decimal : ", \n)"  Var retuned y
-        y=x
-	printf("hexadecimal number : %X", decimalNumber);
+	y=x;
+	printf("unsigned decimal : %u\n", y);
+	printf("hexadecimal number : %X", y);
     return EXIT_SUCCESS;
 }
