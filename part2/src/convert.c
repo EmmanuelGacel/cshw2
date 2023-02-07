@@ -5,31 +5,24 @@ int main() {
         int x;
         unsigned int y;
         int size;
-        //int MSB;
-        size = sizeof(y) * 8;
-        //printf("%d\n", size);
-        printf("Enter an integer   : ");
-        scanf("%d", &x);
+        size = sizeof(y) * 8; //Uses sizeof to calculate the total number of bites
+        printf("Enter an integer   : "); //Asks the user for an integer
+        scanf("%d", &x); //uses scanf to take in a userdefined integer
         printf("\n");
-        y=x;
-        printf("signed decimal     : %d\n", x);
-        printf("unsigned decimal   : %u\n", y);
-        printf("hexadecimal number : %x\n", y);
-        //MSB=(y & (0x1 << ((sizeof(x) << 3) - 1)));
-        //if ((y & (0x1 << ((sizeof(x) << 3) - 1))))
-        //      putc('1', stdout);
-        //else
-        //      printf("Positive\n");
-        //printf("%d\n",MSB);
-        //y=(y >> 31);
-        //printf("%u\n", y);
-	printf("binary             : ");
+        y=x; //Setting an unsigned integer to the value of the user-defined integer
+        printf("signed decimal     : %d\n", x); //Prints the signed decimal number
+        printf("unsigned decimal   : %u\n", y); //Prints the unsigned decimal integer
+        printf("hexadecimal number : %x\n", y); //Prints the hexadecimal number by casting it w/ %x
+	printf("binary             : "); //Biary number print statement
+	//This loop constructs a binary number with a 1 in the n-i position, and 0s everywhere else
+	//The loop then calls a bitwise and on the usertifined unsigned integer and the generated binary number
+	//If the number is greater than 0 it prints a 1, if it less than 1 it prints a 0
 	while(size > 0){
-                if (y & (0x1 << (size - 1)))
+                if (y & (0x1 << (size - 1))) //Takend from recitation #2, MSB demonstration
                 putc('1', stdout);
                 else
                 putc('0', stdout);
-                //printf("%d", size);
+                //Inserts spaces every 4 bits
 		if ( size == 29)
                         printf(" ");
                 if ( size == 25)
@@ -47,7 +40,6 @@ int main() {
                 size --;
 
         }
-        //MSB = (MSB&1);
         printf("\n");
 
     return EXIT_SUCCESS;
